@@ -1,11 +1,28 @@
 <html>
   <head>
-      <link rel="stylesheet" type="text/css" href="CSS/style.css"/>
+  <link rel="stylesheet" type="text/css" href="CSS/style.css"/>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( document ).tooltip();
+    $("area").tooltip({ track: true });
+
+  });
+  </script>
+  <style>
+  label {
+    display: inline-block;
+    width: 5em;
+  }
+  </style>
   </head>
   <body>
+    <div style="display: flex; flex-direction: column;">
       <header>
-      <div><h1>Welcome to Team Celestials!</h1></div>
-      </div>
+      <div id="heading"><h1>Welcome to Team Celestials!</h1></div>
+      <div id="credits">
         <ul>
           <li>Junninho Thomas</li>
           <li>Richard Eustache</li>
@@ -16,30 +33,25 @@
         </ul>
       </div>
       </header>
-      <!--
-      The Sun is the star at the center of the Solar System and is by far the most important source of energy for life on Earth. It is a nearly perfect spherical ball of hot plasma.
-      Mercury is the closest planet to the Sun and the smallest planet in the Solar System (0.055 Earth masses). Mercury has no natural satellites.
-      Venus is close in size to Earth (0.815 Earth masses) and, like Earth, has a thick silicate mantle around an iron core, a substantial atmosphere, and evidence of internal geological activity. It is much drier than Earth, and its atmosphere is ninety times as dense. Venus has no natural satellites. It is the hottest planet, with surface temperatures over 400 °C
-      Earth is the largest and densest of the inner planets, the only one known to have current geological activity, and the only place where life is known to exist.
-      Mars is smaller than Earth and Venus (0.107 Earth masses). It possesses an atmosphere of mostly carbon dioxide with a surface pressure of 6.1 millibars. Its surface is peppered with vast volcanoes, such as Olympus Mons, and rift valleys.
-      Jupiter, at 318 Earth masses, is 2.5 times the mass of all the other planets put together. It is composed largely of hydrogen and helium. Jupiter's strong internal heat creates semi-permanent features in its atmosphere, such as cloud bands and the Great Red Spot.
-      Saturn, distinguished by its extensive ring system, has several similarities to Jupiter, such as its atmospheric composition and magnetosphere. Although Saturn has 60% of Jupiter's volume, it is less than a third as massive, at 95 Earth masses, making it the least dense planet in the Solar System.
-      Uranus, at 14 Earth masses, is the lightest of the outer planets. Uniquely among the planets, it orbits the Sun on its side; its axial tilt is over ninety degrees to the ecliptic. It has a much colder core than the other giant planets and radiates very little heat into space.
-      Neptune, though slightly smaller than Uranus, is more massive (equivalent to 17 Earths) and hence more dense. It radiates more internal heat, but not as much as Jupiter or Saturn.
-      Pluto is a dwarf planet. Primarily made of ice and rock and is relatively small—about one-sixth the mass of Earth's Moon and one-third its volume.
-      -->
-      <img alt="solarsystem" src="images/spacewithplanets.png" usemap="#planetMap"/>
-      <map name="planetMap" id="planetMap">
-        <area shape="circle" coords="162,695,90" alt="Sun" href="game.html?planet=sun"/> 
-        <area shape="circle" coords="359,657,22" alt="Mercury" href="game.html?planet=mercury"/>
-        <area shape="circle" coords="276,454,32" alt="Venus" href="game.html?planet=venus"/>
-        <area shape="circle" coords="440,373,23" alt="Mars" href="game.html?planet=mars"/>
-        <area shape="circle" coords="512,602,45" alt="Earth" href="game.html?planet=earth"/>
-        <area shape="circle" coords="685,441,81" alt="Jupiter" href="game.html?planet=jupiter"/>
-        <area shape="circle" coords="707,172,65" alt="Saturn" href="game.html?planet=saturn"/> 
-        <area shape="circle" coords="1056,215,41" alt="Uranus" href="game.html?planet=uranus"/>
-        <area shape="circle" coords="1019,53,60" alt="Neptune" href="game.html?planet=neptune"/>
-        <area shape="circle" coords="1195,18,19" alt="Pluto" href="game.html?planet=pluto"/>
-      </map>
+      
+      <div style="display: flex; flex-justify=center">
+        <div style="position: relative; left: 0; top: 0;">
+          <img src="images/moving_blackhole.gif" style="position: absolute; left: 700px; top: 600px"/>
+          <img alt="solarsystem" src="images/spacewithplanets.png" usemap="#planetMap"/>
+          <map name="planetMap" id="planetMap">
+            <area title="The Sun is the star at the center of the Solar System and is by far the most important source of energy for life on Earth. Mass: 1.989E30 kg" shape="circle" coords="162,695,90" alt="Sun" href="sun.html?planet=sun"/> 
+            <area title="Mercury is the smallest and closest to the Sun of the eight planets in the Solar System, with an orbital period of about 88 Earth days. Mass: 328.5E21 kg (0.055 Earth mass)" shape="circle" coords="359,657,22" alt="Mercury" href="game.html?planet=mercury"/>
+            <area title="Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has no natural satellite. It is named after the Roman goddess of love and beauty.Mass: 4.867E24 kg (0.815 Earth mass)" shape="circle" coords="276,454,32" alt="Venus" href="game.html?planet=venus"/>
+            <area title="Mars is the fourth planet from the Sun and the second smallest planet in the Solar System, after Mercury.Mass: 639E21 kg (0.107 Earth mass)" shape="circle" coords="440,373,23" alt="Mars" href="game.html?planet=mars"/>
+            <area title="Earth is the third planet from the Sun, the densest planet in the Solar System, the largest of the Solar System's four terrestrial planets, and the only astronomical object known to harbor life.Mass: 5.972E24 kg" shape="circle" coords="512,602,45" alt="Earth" href="game.html?planet=earth"/>
+            <area title="Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two and a half times that of all the other planets in the Solar System combined.Mass: 1.898E27 kg (317.8 Earth mass)" shape="circle" coords="685,441,81" alt="Jupiter" href="game.html?planet=jupiter"/>
+            <area title="Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth.Mass: 568.3E24 kg (95.16 Earth mass)" shape="circle" coords="707,172,65" alt="Saturn" href="game.html?planet=saturn"/> 
+            <area title="Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.Mass: 86.81E24 kg (14.54 Earth mass)" shape="circle" coords="1056,215,41" alt="Uranus" href="game.html?planet=uranus"/>
+            <area title="Neptune is the eighth and farthest planet from the Sun in the Solar System. It is the fourth-largest planet by diameter and the third-largest by mass. Among the giant planets in the Solar System, Neptune is the most dense.Mass: 102.4E24 kg (17.15 Earth mass)" shape="circle" coords="1019,53,60" alt="Neptune" href="game.html?planet=neptune"/>
+            <area title="Pluto is a dwarf planet in the Kuiper belt, a ring of bodies beyond Neptune. It was the first Kuiper belt object to be discovered.1.30900 × 1022 kilograms" shape="circle" coords="1195,18,19" alt="Pluto" href="game.html?planet=pluto"/>
+          </map>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
