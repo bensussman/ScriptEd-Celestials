@@ -2,21 +2,26 @@ html {
     background-image: url("../images/background_space.jpg");
 }
 
-header {
-    float:left; 
-    color:white; 
+#heading {
+    float:left;
+    padding: 0px;
+    margin: 0px;
+}
+
+header{
+    color:white;
 }
 
 ul {
-   float:right; 
+    float:left;
+    padding:0;
 }
 
 li {
-    display: block; 
-    text-align: center;
-}
-
-h1 {
-    width: 40%;  
+    list-style-type: none;
+    margin: 0%;
+    padding: 1%;
+    display: inline;
+    width: 10;
 }
 

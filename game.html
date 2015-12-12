@@ -2,7 +2,7 @@
 <html lang="en"> 
 <head> 
 	<meta charset="UTF-8" />
-    <title>Phaser - Making your first game, part 9</title>
+    <title>Celestials - This is our first game</title>
     <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <style type="text/css">
@@ -33,17 +33,21 @@ function getUrlVars()
 var bounce = 0.2;
 var gravity = 300;
 var starGravity =300;
-
+var star = 'images/star.png';
 var skyImageName = 'images/earth_sky.jpg';
 var movementSpeed = 150;
 var planetColor = '0x0B7B0B';
-var planetOpacity = 1 
-var p1 = 400;
-var p2 = 375;
-var p3 = 550;
-var p4 = 250;
-var p5 = 650;
-
+var planetOpacity = 1 ;
+var y1 = 400;
+var y2 = 375;
+var y3 = 550;
+var y4 = 250;
+var y5 = 650;
+var x1 = -150;
+var x2 = 400;
+var x3 = 250;
+var x4 = -300;
+var x5 = 230;
 var planet = getUrlVars()['planet'];
 
 
@@ -53,32 +57,35 @@ if (planet == "mercury") {
     bounce = 0.45;
     movementSpeed = 300;
     planetColor = '0x220E7D';
-    p2 = 375;
-    p3 = 200;
-    p4 = 600;
-    p5 = 100;
+    y2 = 375;
+    y3 = 200;
+    y4 = 600;
+    y5 = 100;
+    star = "images/3star.png";
 }
-
+// p1 = y axis
 else if (planet == "venus") {
     skyImageName= "images/venus_sky.jpg";
     gravity = 175;
     bounce = 0.3;
     movementSpeed = 125 ;   
     planetColor = '0x7D0E11'
-    p1=0;
-    p2=0;
-    p3=0;
-    p4=0;
-    p5=0;
+     x1=40;
+     y1=-100;
+     y2=110;
+    // y3=0;
+    // y4=0;
+    // y5=0;
+    star = "images/2star.gif";
 }
 
 else if (planet == "earth") {
     skyImageName= "images/earth_sky.jpg";
-    p1=0;
-    p2=0;
-    p3=0;
-    p4=0;
-    p5=0;
+    // y1=0;
+    // y2=0;
+    // y3=0;
+    // y4=0;
+    // y5=0;
 }
 
 else if (planet == "mars") {
@@ -87,9 +94,9 @@ else if (planet == "mars") {
     movementSpeed = 500;
     bounce = 0.4;
     planetColor = '0x7D490E'
-    
+    star = "images/4star.png";
 }
-
+// take out platform  jupiter
 else if (planet == "jupiter") {
     skyImageName= "images/jupiter_sky.jpg";
     gravity = 600;
@@ -97,31 +104,34 @@ else if (planet == "jupiter") {
     bounce = 0.0;
     planetColor = '0x6B4E27'
     planetOpacity = .5 
-    
+    star = "images/5star.png";
 }
-
+// take out platform
 else if (planet == "saturn") {
     skyImageName= "images/saturn_sky.jpg";
     gravity = 400;
     movementSpeed = 145;
     planetColor = 0 ;
     planetOpacity = .5 ;
+    star = "images/6star.png";
 }
-
+// take out platform
 else if (planet == "uranus") {
     skyImageName= "images/uranus_sky.jpg";
     gravity = 350;
     movementSpeed = 155;
     bounce = 0.15;
     planetOpacity = .5 ;
+    star = "images/7star.png";
 }
-
+// take out platform
 else if (planet == "neptune") {
     skyImageName= "images/neptune_sky.jpg";
     gravity = 325
     movementSpeed = 165;
     planetColor = '0x3060A021'
     planetOpacity = .5 ; 
+    star = "images/8star.gif";
 }
 
 else if (planet == "pluto") {
@@ -129,6 +139,7 @@ else if (planet == "pluto") {
     planetColor = '0xABAA63'
     gravity = 95;
     movementSpeed = 600;
+    star = "images/9star.png";
 }
 
 
@@ -138,7 +149,7 @@ function preload() {
 
     game.load.image('sky', skyImageName);
     game.load.image('ground', 'images/platform_white.png');
-    game.load.image('star', 'images/star.png');
+    game.load.image('star', star);
     game.load.spritesheet('dude', 'images/dude.png', 32, 48);
 
 }
@@ -179,28 +190,28 @@ function create() {
     ground.body.immovable = true;
 
     //  Now let's create two ledges
-    var ledge = platforms.create(400, p2, 'ground');
+    var ledge = platforms.create(x2, y2, 'ground');
     ledge.tint = planetColor
     ledge.alpha = planetOpacity
     
     ledge.body.immovable = true;
 
-    ledge = platforms.create(-150, p1, 'ground');
+    ledge = platforms.create(x1, y1, 'ground');
     ledge.body.immovable = true;
     ledge.tint = planetColor
     ledge.alpha = planetOpacity
     
-    ledge = platforms.create (150, p3, 'ground');
+    ledge = platforms.create (x3, y3, 'ground');
     ledge.body.immovable = true;
     ledge.tint = planetColor
     ledge.alpha = planetOpacity
     
-    ledge = platforms.create(-150, p4, 'ground');
+    ledge = platforms.create(x4, y4, 'ground');
     ledge.body.immovable = true;
     ledge.tint = planetColor
     ledge.alpha = planetOpacity
 
-    ledge = platforms.create(400, p5, 'ground');
+    ledge = platforms.create(x5, y5, 'ground');
     ledge.body.immovable = true;
     ledge.tint = planetColor
     ledge.alpha = planetOpacity
