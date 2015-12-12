@@ -1,0 +1,22 @@
+html {
+    background-image: url("../images/background_space.jpg");
+}
+
+header {
+    float:left; 
+    color:white; 
+}
+
+ul {
+   float:right; 
+}
+
+li {
+    display: block; 
+    text-align: center;
+}
+
+h1 {
+    width: 40%;  
+}
+
