@@ -54,7 +54,7 @@ var star = 'images/star.png';
 var skyImageName = 'images/earth_sky.jpg';
 var movementSpeed = 150;
 var planetColor = '0x0B7B0B';
-var planetOpacity = 1 ;
+var planetOpacity = 1;
 var platformy1 = 400;
 var platformy2 = 375;
 var platformy3 = 550;
@@ -174,7 +174,7 @@ function preload() {
     game.load.image('sky', skyImageName);
     game.load.image('ground', 'images/platform_white.png');
     game.load.image('star', star);
-    game.load.spritesheet('dude', 'images/spaceman2.png', 38, 48);
+    game.load.spritesheet('dude', 'images/spaceman.png', 38, 48);
 }
 
 var player;
@@ -234,7 +234,6 @@ function create() {
     
     player.animations.add('left', [0, 1, 2, 3], 10, true);
     player.animations.add('right', [5, 6, 7, 8], 10, true);
-
     
     stars = game.add.group();
 
